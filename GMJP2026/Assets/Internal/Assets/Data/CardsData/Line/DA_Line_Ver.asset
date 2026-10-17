@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f79845f66e3504fa5e5f4c34633a75, type: 3}
   m_Name: DA_Line_Ver
   m_EditorClassIdentifier: 
+  m_blockSprite: {fileID: 2985481471964847052, guid: cacda5b2cbafcb74b84845a317c0c465, type: 3}
   m_positions:
   - {x: 0, y: 0}
-  - {x: 1, y: 0}
-  - {x: 2, y: 0}
-  - {x: 3, y: 0}
+  - {x: 0, y: 1}
+  - {x: 0, y: 2}
+  - {x: 0, y: 3}
