@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 57967638}
   - component: {fileID: 57967640}
   - component: {fileID: 57967639}
+  - component: {fileID: 57967641}
   m_Layer: 5
   m_Name: LIFE
   m_TagString: Untagged
@@ -363,7 +364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -148, y: -121.43}
+  m_AnchoredPosition: {x: -148, y: -121.42999}
   m_SizeDelta: {x: 200, y: 164.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57967639
@@ -463,6 +464,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57967637}
   m_CullTransparentMesh: 1
+--- !u!114 &57967641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57967637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0e0636c8907554c99e7b252b674413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 57967639}
+  phc: {fileID: 15968302}
 --- !u!1 &93372199
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +890,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 96560313be747f541b747df3aca04aca, type: 2}
   - {fileID: 11400000, guid: 20f32f38104f9c542baed506fa006252, type: 2}
   - {fileID: 11400000, guid: 9ca7e1ba776197b46b8c6cc7cf6a24e3, type: 2}
+  - {fileID: 11400000, guid: af51cfa551600b84e934228c28048417, type: 2}
+  - {fileID: 11400000, guid: 5bdb4dad69d475a4ab79a7fa880bc432, type: 2}
+  - {fileID: 11400000, guid: 30f29d53dde7e4446bf7487d4e088bad, type: 2}
+  - {fileID: 11400000, guid: 2fb24e4db6e1be049a2a754d4dc162cd, type: 2}
+  - {fileID: 11400000, guid: f3377b00983cc6246941cee93faff491, type: 2}
+  - {fileID: 11400000, guid: 8c3f668d26cfaea43aedbfd3d3ab7bd0, type: 2}
+  - {fileID: 11400000, guid: 5c686ffdda09fb847a7ff9222f7a439a, type: 2}
+  - {fileID: 11400000, guid: 0a6e7bc1d2978f44c9cc90a55644dac3, type: 2}
+  - {fileID: 11400000, guid: 4c517dbe5ecd9704a993541bd613226d, type: 2}
+  - {fileID: 11400000, guid: 3894322913d11e44a8d5419466d63274, type: 2}
+  - {fileID: 11400000, guid: e7ff6c91333529c468f290181eb46340, type: 2}
+  - {fileID: 11400000, guid: f27189d973cc1dc47a44cebe5da1af4f, type: 2}
+  - {fileID: 11400000, guid: 3bf4c759b0aaff84ea947a76f0096a89, type: 2}
+  - {fileID: 11400000, guid: 85088dac8d75c184a854ac0fddd65417, type: 2}
+  - {fileID: 11400000, guid: f64723ba9e8b6fc4ab785973e0c5fa0b, type: 2}
   m_allEffectDatas:
   - {fileID: 11400000, guid: ade5a84b9b4a89047b76e994e7c1223a, type: 2}
   - {fileID: 11400000, guid: 5928d7a9ea30e4f4b8f8ec3fa418d239, type: 2}

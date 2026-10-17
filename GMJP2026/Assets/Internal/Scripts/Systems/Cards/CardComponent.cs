@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CardComponent : MonoBehaviour
 {
+    [SerializeField] UnityEngine.UI.Image m_backgroundRenderer;
+    [SerializeField] UnityEngine.UI.Image m_blockRenderer;
+
     [SerializeField] CardData m_cardData;
     [SerializeField] CardEffectData m_effectData;
 
@@ -20,6 +23,7 @@ public class CardComponent : MonoBehaviour
     {
         SetCardData(cardData);
         SetEffectData(effectData);
+        SetupVisual();
     }
 
 
@@ -31,5 +35,11 @@ public class CardComponent : MonoBehaviour
     void SetEffectData(CardEffectData effectData)
     {
         m_effectData = effectData;
+    }
+
+    void SetupVisual()
+    {
+        m_backgroundRenderer.sprite = m_effectData.CardBackground;
+        m_blockRenderer.sprite = m_cardData.BlockSprite;
     }
 }

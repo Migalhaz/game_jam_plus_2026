@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1ae1aa9c8e00b43af6487a276307e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_backgroundRenderer: {fileID: 2331352762434738397}
+  m_blockRenderer: {fileID: 8428671293451265179}
   m_cardData: {fileID: 11400000, guid: cfb6f033854fcd9448439213fea2dbd2, type: 2}
   m_effectData: {fileID: 0}
 --- !u!1 &8692126874045094646

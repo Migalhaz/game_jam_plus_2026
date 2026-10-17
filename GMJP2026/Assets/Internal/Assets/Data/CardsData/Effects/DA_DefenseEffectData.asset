@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f7ee1e7c8bb1d43b1e826a335c4a1e, type: 3}
   m_Name: DA_DefenseEffectData
   m_EditorClassIdentifier: 
+  m_cardBackground: {fileID: -6907215224132008198, guid: 2233dfac62eb14c46b1ee37577f35a5e, type: 3}
