@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class ToothHealthComponent : LoadDataHealthComponent
 {
-    [SerializeField] private bool m_hit;
+    private bool m_attackMode;
+    public bool AttackMode => m_attackMode;
 
-    [SerializeField] private int m_damagePerHit = 1;
-    public int m_DamagePerHit => m_damagePerHit;
-
-    private void Update()
+    private void OnEnable()
     {
-        ToothHit();
+        TurnManagerObserver.m_OnFinishTurn += OnFinishTurn;
     }
-    public void ToothHit() {
-    if (m_hit)
+
+    private void OnDisable()
+    {
+        TurnManagerObserver.m_OnFinishTurn -= OnFinishTurn;
+    }
+
+    private void OnFinishTurn()
+    {
+        if (m_attackMode && IsAlive)
         {
-            Hit(m_damagePerHit);
-            m_hit = false;
+            PlayerHealthComponentObserver.RequestPlayerDamage(1);
         }
+        ChangeAttackMode(false);
+    }
+
+    public void ChangeAttackMode(bool attackModeState)
+    {
+        m_attackMode = attackModeState;
+    }
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        ChangeAttackMode(false);
     }
 }

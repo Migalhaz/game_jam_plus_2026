@@ -10,11 +10,28 @@ public class ToothVisual : MonoBehaviour
     private void OnEnable()
     {
         HealthComponentObserver.m_OnDie += OnDie;
+
     }
 
     private void OnDisable()
     {
         HealthComponentObserver.m_OnDie -= OnDie;
+    }
+
+    private void Update()
+    {
+        if (m_thc.IsAlive)
+        {
+            if (m_thc.AttackMode)
+            {
+                m_spriteRenderer.color = Color.red;
+            }
+            else
+            {
+                m_spriteRenderer.color = Color.white;
+            }
+        }
+
     }
 
     void OnDie(HealthComponent hc)

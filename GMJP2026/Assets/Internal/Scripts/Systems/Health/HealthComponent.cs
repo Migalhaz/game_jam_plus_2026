@@ -15,7 +15,7 @@ public class HealthComponent : MonoBehaviour
     public int CurrentHealth => m_currentHealth;
     public bool IsAlive => m_currentHealth > 0;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (this is ISetupHealthComponent hc)
         {

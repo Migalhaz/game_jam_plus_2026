@@ -10,6 +10,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     [SerializeField] private int m_columns = 5;
     [SerializeField, Min(0)] private float m_spacing;
     [SerializeField] Transform m_toothPivot;
+    [SerializeField] Vector2 m_startRange;
     private List<List<ToothHealthComponent>> m_toothHealthComponents;
 
     public int m_Rows => m_rows;
@@ -19,12 +20,14 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     {
         HealthComponentObserver.m_OnDie += OnToothDies;
         ToothHurtBoxObserver.m_OnSelectHurtBox += OnSelectTooth;
+        TurnManagerObserver.m_OnStartTurn += OnStartTurn;
     }
 
     private void OnDisable()
     {
         HealthComponentObserver.m_OnDie -= OnToothDies;
         ToothHurtBoxObserver.m_OnSelectHurtBox -= OnSelectTooth;
+        TurnManagerObserver.m_OnStartTurn -= OnStartTurn;
     }
 
     public void SetupHealth()
@@ -52,6 +55,42 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
         if (!CheckTooth(thc)) return;
         
         Hit(1);
+    }
+
+    private void OnStartTurn(int ct)
+    {
+        int teethCount = Random.Range((int)(m_startRange.x + (ct - 1d)), (int)(m_startRange.y + ct));
+        teethCount = Mathf.Min(m_currentHealth, teethCount);
+
+        List<Vector2> validIdx = new List<Vector2>(CurrentHealth);
+
+        for (int y = 0; y < m_rows; ++y)
+        {
+            for (int x = 0; x < m_columns; ++x)
+            {
+                if (m_toothHealthComponents[y][x].IsAlive)
+                {
+                    validIdx.Add(new Vector2(x, y));
+                }
+            }
+        }
+
+        for (int i = 0; i < teethCount; ++i)
+        {
+            if (validIdx.Count <= 0) break;
+            int idx = Random.Range(0, validIdx.Count);
+            Vector2 randomIdx = validIdx[idx];
+            validIdx.RemoveAt(idx);
+
+            m_toothHealthComponents[(int)randomIdx.y][(int)randomIdx.x].ChangeAttackMode(true);
+        }
+
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        SceneController.Instance.LoadScene(2);
     }
 
     private bool CheckTooth(ToothHealthComponent thc)
