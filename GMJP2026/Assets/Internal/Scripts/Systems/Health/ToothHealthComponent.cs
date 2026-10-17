@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class ToothHealthComponent : LoadDataHealthComponent
 {
+    private bool m_selected;
     private bool m_attackMode;
+    public bool Selected => m_selected;
     public bool AttackMode => m_attackMode;
 
     private void OnEnable()
     {
         TurnManagerObserver.m_OnFinishTurn += OnFinishTurn;
+        ToothHurtBoxObserver.m_OnClickHurtBox += ClickHurtBox;
     }
 
     private void OnDisable()
     {
         TurnManagerObserver.m_OnFinishTurn -= OnFinishTurn;
+        ToothHurtBoxObserver.m_OnClickHurtBox -= ClickHurtBox;
     }
 
     private void OnFinishTurn()
@@ -31,6 +35,15 @@ public class ToothHealthComponent : LoadDataHealthComponent
         m_attackMode = attackModeState;
     }
 
+    public void ChangeSelected(bool selectState)
+    {
+        m_selected = selectState;
+    }
+
+    void ClickHurtBox(ToothHurtBox _)
+    {
+        ChangeSelected(false);
+    }
 
     protected override void Awake()
     {

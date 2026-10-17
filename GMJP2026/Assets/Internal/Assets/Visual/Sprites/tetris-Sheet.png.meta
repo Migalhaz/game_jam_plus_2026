@@ -1,0 +1,828 @@
+fileFormatVersion: 2
+guid: cacda5b2cbafcb74b84845a317c0c465
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -264956926581701150
+    second: tetris-Sheet_0
+  - first:
+      213: 2778482253730853723
+    second: tetris-Sheet_1
+  - first:
+      213: -4753041299458176153
+    second: tetris-Sheet_2
+  - first:
+      213: -6252805839016053310
+    second: tetris-Sheet_3
+  - first:
+      213: -5526610464378216387
+    second: tetris-Sheet_4
+  - first:
+      213: -4723421793718683500
+    second: tetris-Sheet_5
+  - first:
+      213: -7391117805829308835
+    second: tetris-Sheet_6
+  - first:
+      213: 3207293522686006872
+    second: tetris-Sheet_7
+  - first:
+      213: 3721446588392824294
+    second: tetris-Sheet_8
+  - first:
+      213: 3824157240685794131
+    second: tetris-Sheet_9
+  - first:
+      213: 7664113212525933655
+    second: tetris-Sheet_10
+  - first:
+      213: -8832642680216842994
+    second: tetris-Sheet_11
+  - first:
+      213: 2985481471964847052
+    second: tetris-Sheet_12
+  - first:
+      213: -1424242114853406783
+    second: tetris-Sheet_13
+  - first:
+      213: 3030326750466853994
+    second: tetris-Sheet_14
+  - first:
+      213: -7365514673681490492
+    second: tetris-Sheet_15
+  - first:
+      213: 304884554465002657
+    second: tetris-Sheet_16
+  - first:
+      213: 8060980833405151459
+    second: tetris-Sheet_17
+  - first:
+      213: -4121694660893128478
+    second: tetris-Sheet_18
+  - first:
+      213: 6043235207427944873
+    second: tetris-Sheet_19
+  - first:
+      213: 6944351557414482875
+    second: tetris-Sheet_20
+  - first:
+      213: -3997373334029127296
+    second: tetris-Sheet_21
+  - first:
+      213: -4266308645891165378
+    second: tetris-Sheet_22
+  - first:
+      213: 5461898353575854531
+    second: tetris-Sheet_23
+  - first:
+      213: 6048273593525356655
+    second: tetris-Sheet_24
+  - first:
+      213: -7947306046968874990
+    second: tetris-Sheet_25
+  - first:
+      213: -6264983688753356312
+    second: tetris-Sheet_26
+  - first:
+      213: 5004302570369406731
+    second: tetris-Sheet_27
+  - first:
+      213: -134315280835548975
+    second: tetris-Sheet_28
+  - first:
+      213: 6486553488387633452
+    second: tetris-Sheet_29
+  - first:
+      213: 1640212341015594169
+    second: tetris-Sheet_30
+  - first:
+      213: -8688312014660453502
+    second: tetris-Sheet_31
+  - first:
+      213: -3331649523875183307
+    second: tetris-Sheet_32
+  - first:
+      213: -620203361055558327
+    second: tetris-Sheet_33
+  - first:
+      213: -4198309695560286400
+    second: tetris-Sheet_34
+  - first:
+      213: 2846559355375126953
+    second: tetris-Sheet_35
+  - first:
+      213: -1084973107742483590
+    second: tetris-Sheet_36
+  - first:
+      213: 8923173085194893483
+    second: tetris-Sheet_37
+  - first:
+      213: 2532184667449412670
+    second: tetris-Sheet_38
+  - first:
+      213: -1655600370350919932
+    second: tetris-Sheet_39
+  - first:
+      213: -5340305521556795188
+    second: tetris-Sheet_40
+  - first:
+      213: -2511068155782010734
+    second: tetris-Sheet_41
+  - first:
+      213: 5120942565113295632
+    second: tetris-Sheet_42
+  - first:
+      213: 797823341310039769
+    second: tetris-Sheet_43
+  - first:
+      213: -9078746766391786145
+    second: tetris-Sheet_44
+  - first:
+      213: 5879831689302348082
+    second: tetris-Sheet_45
+  - first:
+      213: -8426692050903725530
+    second: tetris-Sheet_46
+  - first:
+      213: 354626423530889405
+    second: tetris-Sheet_47
+  - first:
+      213: 4629781983133254964
+    second: tetris-Sheet_48
+  - first:
+      213: -1461614131485151662
+    second: tetris-Sheet_49
+  - first:
+      213: -8755117982056928168
+    second: tetris-Sheet_50
+  - first:
+      213: 5583090882759710605
+    second: tetris-Sheet_51
+  - first:
+      213: -1527158912282749579
+    second: tetris-Sheet_52
+  - first:
+      213: -2682772106773698778
+    second: tetris-Sheet_53
+  - first:
+      213: -6226724239261906897
+    second: tetris-Sheet_54
+  - first:
+      213: -4863270399506036769
+    second: tetris-Sheet_55
+  - first:
+      213: -2920652375093467905
+    second: tetris-Sheet_56
+  - first:
+      213: -5953803584698339997
+    second: tetris-Sheet_57
+  - first:
+      213: -4776558722548239388
+    second: tetris-Sheet_58
+  - first:
+      213: -4848940714539221863
+    second: tetris-Sheet_59
+  - first:
+      213: -1698943631405122284
+    second: tetris-Sheet_60
+  - first:
+      213: 9182095961282196156
+    second: tetris-Sheet_61
+  - first:
+      213: 4432249162895688896
+    second: tetris-Sheet_62
+  - first:
+      213: -5126574622455501835
+    second: tetris-Sheet_63
+  - first:
+      213: 8890114164081110103
+    second: tetris-Sheet_64
+  - first:
+      213: 3152206786221642361
+    second: tetris-Sheet_65
+  - first:
+      213: -7483230690123583354
+    second: tetris-Sheet_66
+  - first:
+      213: 1775279477584075416
+    second: tetris-Sheet_67
+  - first:
+      213: -7617706930234768628
+    second: tetris-Sheet_68
+  - first:
+      213: 3562939422063685479
+    second: tetris-Sheet_69
+  - first:
+      213: -3000822261571928163
+    second: tetris-Sheet_70
+  - first:
+      213: -8760174582003233240
+    second: tetris-Sheet_71
+  - first:
+      213: 8909609904150892814
+    second: tetris-Sheet_72
+  - first:
+      213: 4662118936474494631
+    second: tetris-Sheet_73
+  - first:
+      213: 4776187452230800460
+    second: tetris-Sheet_74
+  - first:
+      213: 5423235852897704671
+    second: tetris-Sheet_75
+  - first:
+      213: -1821373957647757660
+    second: tetris-Sheet_76
+  - first:
+      213: -7413987006849092550
+    second: tetris-Sheet_77
+  - first:
+      213: -6095373548128527674
+    second: tetris-Sheet_78
+  - first:
+      213: -2607835311766227332
+    second: tetris-Sheet_79
+  - first:
+      213: -421905166892005797
+    second: tetris-Sheet_80
+  - first:
+      213: 1849229801998860816
+    second: tetris-Sheet_81
+  - first:
+      213: -550676295083881677
+    second: tetris-Sheet_82
+  - first:
+      213: -8628614045489634432
+    second: tetris-Sheet_83
+  - first:
+      213: 432690746965792684
+    second: tetris-Sheet_84
+  - first:
+      213: 8411083121581484221
+    second: tetris-Sheet_85
+  - first:
+      213: -1792319902171969487
+    second: tetris-Sheet_86
+  - first:
+      213: -1708441876450322484
+    second: tetris-Sheet_87
+  - first:
+      213: -5769699988328796557
+    second: tetris-Sheet_88
+  - first:
+      213: 2989109494098558261
+    second: tetris-Sheet_89
+  - first:
+      213: -1600552555790265576
+    second: tetris-Sheet_90
+  - first:
+      213: 4725720888791362376
+    second: tetris-Sheet_91
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tetris-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5815e341fa25cf0800000000000000
+      internalID: -264956926581701150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53ba5483e62f8620800000000000000
+      internalID: 2778482253730853723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76bc80fee1ec90eb0800000000000000
+      internalID: -4753041299458176153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5b5fbd7329939a0800000000000000
+      internalID: -6252805839016053310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30a7ca50198d43b0800000000000000
+      internalID: -5526610464378216387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4983f0587e8037eb0800000000000000
+      internalID: -4723421793718683500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5eba72f3897d6990800000000000000
+      internalID: -7391117805829308835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8565c164778928c20800000000000000
+      internalID: 3207293522686006872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed5ebf74fb35a330800000000000000
+      internalID: 3721446588392824294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3539058cfb2221530800000000000000
+      internalID: 3824157240685794131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7547cfe4c566c5a60800000000000000
+      internalID: 7664113212525933655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d88b997462c6580800000000000000
+      internalID: -8832642680216842994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb99fbb49f8e6920800000000000000
+      internalID: 2985481471964847052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7f20ea7531c3ce0800000000000000
+      internalID: -1424242114853406783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6cc0facf12ed0a20800000000000000
+      internalID: 3030326750466853994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd994fad6f68c990800000000000000
+      internalID: -7365514673681490492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4c36e03ea2b3400800000000000000
+      internalID: 304884554465002657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8a85ceb5b5edf60800000000000000
+      internalID: 8060980833405151459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e847d82b8cccc6c0800000000000000
+      internalID: -4121694660893128478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetris-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a170e81762edd350800000000000000
+      internalID: 6043235207427944873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tetris-Sheet_0: -264956926581701150
+      tetris-Sheet_1: 2778482253730853723
+      tetris-Sheet_10: 7664113212525933655
+      tetris-Sheet_11: -8832642680216842994
+      tetris-Sheet_12: 2985481471964847052
+      tetris-Sheet_13: -1424242114853406783
+      tetris-Sheet_14: 3030326750466853994
+      tetris-Sheet_15: -7365514673681490492
+      tetris-Sheet_16: 304884554465002657
+      tetris-Sheet_17: 8060980833405151459
+      tetris-Sheet_18: -4121694660893128478
+      tetris-Sheet_19: 6043235207427944873
+      tetris-Sheet_2: -4753041299458176153
+      tetris-Sheet_3: -6252805839016053310
+      tetris-Sheet_4: -5526610464378216387
+      tetris-Sheet_5: -4723421793718683500
+      tetris-Sheet_6: -7391117805829308835
+      tetris-Sheet_7: 3207293522686006872
+      tetris-Sheet_8: 3721446588392824294
+      tetris-Sheet_9: 3824157240685794131
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

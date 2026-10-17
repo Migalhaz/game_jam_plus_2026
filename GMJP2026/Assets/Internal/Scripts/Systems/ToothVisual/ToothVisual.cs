@@ -20,16 +20,21 @@ public class ToothVisual : MonoBehaviour
 
     private void Update()
     {
-        if (m_thc.IsAlive)
+        if (!m_thc.IsAlive) return;
+
+        if (m_thc.Selected)
         {
-            if (m_thc.AttackMode)
-            {
-                m_spriteRenderer.color = Color.red;
-            }
-            else
-            {
-                m_spriteRenderer.color = Color.white;
-            }
+            m_spriteRenderer.color = Color.yellow;
+            return;
+        }
+
+        if (m_thc.AttackMode)
+        {
+            m_spriteRenderer.color = Color.red;
+        }
+        else
+        {
+            m_spriteRenderer.color = Color.white;
         }
 
     }

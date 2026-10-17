@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 {
-    // indice = linha * total_colunas + coluna
     [SerializeField] private ToothHealthComponent m_toothHealthComponent;
     [SerializeField] private int m_rows = 5;
     [SerializeField] private int m_columns = 5;
@@ -20,6 +19,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     {
         HealthComponentObserver.m_OnDie += OnToothDies;
         ToothHurtBoxObserver.m_OnSelectHurtBox += OnSelectTooth;
+        ToothHurtBoxObserver.m_OnClickHurtBox += DamageTooth;
         TurnManagerObserver.m_OnStartTurn += OnStartTurn;
     }
 
@@ -27,6 +27,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     {
         HealthComponentObserver.m_OnDie -= OnToothDies;
         ToothHurtBoxObserver.m_OnSelectHurtBox -= OnSelectTooth;
+        ToothHurtBoxObserver.m_OnClickHurtBox -= DamageTooth;
         TurnManagerObserver.m_OnStartTurn -= OnStartTurn;
     }
 
@@ -106,6 +107,31 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     {
         CardComponent selectCard = DeckComponent.Instance.SelectedCard;
         CardData card = selectCard.CardData;
+        CardEffectData effect = selectCard.EffectData;
+
+        int indexRow = m_toothHealthComponents.FindIndex(x => x.Contains(thb.THC));
+        int indexColumn = m_toothHealthComponents[indexRow].IndexOf(thb.THC);
+
+        for (int y = 0; y < m_rows; ++y)
+        {
+            for (int x = 0; x < m_columns; ++x)
+            {
+                if (!m_toothHealthComponents[y][x].IsAlive) continue;
+                
+                bool selected = card.Positions.Exists(pos => indexColumn + pos.x == x && indexRow - pos.y == y);
+                selected = selected && effect.CanApplyEffect(m_toothHealthComponents[y][x]);
+                selected = selected && m_toothHealthComponents[y][x].IsAlive;
+                m_toothHealthComponents[y][x].ChangeSelected(selected);
+            }
+        }
+    }
+
+    void DamageTooth(ToothHurtBox thb)
+    {
+        CardComponent selectCard = DeckComponent.Instance.SelectedCard;
+        CardData card = selectCard.CardData;
+        CardEffectData effect = selectCard.EffectData;
+
         int indexRow = m_toothHealthComponents.FindIndex(x => x.Contains(thb.THC));
         int indexColumn = m_toothHealthComponents[indexRow].IndexOf(thb.THC);
 
@@ -116,8 +142,8 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 
             if (!(currentX >= 0 && currentX < m_columns && currentY >= 0 && currentY < m_rows)) continue;
 
-
-            m_toothHealthComponents[currentY][currentX].Hit(1);
+            effect.ApplyEffect(m_toothHealthComponents[currentY][currentX]);
+            //m_toothHealthComponents[currentY][currentX].Hit(1);
         }
 
         DeckComponent.Instance.UseCard();
