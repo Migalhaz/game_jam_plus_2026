@@ -2,22 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface ISetupHealthComponent
+{
+    public void SetupHealth();
+}
+
 [DisallowMultipleComponent]
 public class HealthComponent : MonoBehaviour
 {
-    [SerializeField, Min(1)] private int m_health = 10;
+    protected int m_currentHealth;
 
-    public int CurrentHealth => m_health;
+    public int CurrentHealth => m_currentHealth;
+    public bool IsAlive => m_currentHealth > 0;
+
+    private void Awake()
+    {
+        if (this is ISetupHealthComponent hc)
+        {
+            hc.SetupHealth();
+        }
+    }
 
     public virtual void Hit(int damage)
     {
-        int healthBefore = m_health;
-        m_health -= damage;
-        m_health = Mathf.Max(m_health, 0);
+        if (!IsAlive) return;
+        int healthBefore = m_currentHealth;
+        m_currentHealth -= damage;
+        m_currentHealth = Mathf.Max(m_currentHealth, 0);
         HealthComponentObserver.OnHit(this, damage);
-        HealthComponentObserver.OnHealthChanged(this, healthBefore, m_health);
+        HealthComponentObserver.OnHealthChanged(this, healthBefore, m_currentHealth);
 
-        if (m_health <= 0)
+        if (m_currentHealth <= 0)
         {
             Die();
         }
@@ -25,10 +40,11 @@ public class HealthComponent : MonoBehaviour
 
     public virtual void Heal(int heal)
     {
-        int healthBefore = m_health;
-        m_health += heal;
+        if (!IsAlive) return;
+        int healthBefore = m_currentHealth;
+        m_currentHealth += heal;
         HealthComponentObserver.OnHeal(this, heal);
-        HealthComponentObserver.OnHealthChanged(this, healthBefore, m_health);
+        HealthComponentObserver.OnHealthChanged(this, healthBefore, m_currentHealth);
     }
 
     protected virtual void Die()
@@ -36,6 +52,26 @@ public class HealthComponent : MonoBehaviour
         HealthComponentObserver.OnDie(this);
     }
 }
+
+public class StartHealthComponent : HealthComponent, ISetupHealthComponent
+{
+    [SerializeField, Min(1)] int m_startHealth = 1;
+
+    public void SetupHealth()
+    {
+        m_currentHealth = m_startHealth;
+    }
+}
+
+public abstract class LoadDataHealthComponent : HealthComponent, ISetupHealthComponent
+{
+    [SerializeField] private HealthData m_healthData;
+    public void SetupHealth()
+    {
+        m_currentHealth = m_healthData.m_StartHealth;
+    }
+}
+
 
 public static class HealthComponentObserver
 {
