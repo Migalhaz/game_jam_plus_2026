@@ -4,28 +4,44 @@ using UnityEngine;
 
 public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 {
-    [SerializeField] private int m_startHealth;
+    // indice = linha * total_colunas + coluna
     [SerializeField] private ToothHealthComponent m_toothHealthComponent;
-    private List<ToothHealthComponent> m_toothHealthComponents;
+    [SerializeField] private int m_rows = 5;
+    [SerializeField] private int m_columns = 5;
+    [SerializeField, Min(0)] private float m_spacing;
+    [SerializeField] Transform m_toothPivot;
+    private List<List<ToothHealthComponent>> m_toothHealthComponents;
+
+    public int m_Rows => m_rows;
+    public int m_Columns => m_columns;
 
     private void OnEnable()
     {
         HealthComponentObserver.m_OnDie += OnToothDies;
+        ToothHurtBoxObserver.m_OnSelectHurtBox += OnSelectTooth;
     }
 
     private void OnDisable()
     {
         HealthComponentObserver.m_OnDie -= OnToothDies;
+        ToothHurtBoxObserver.m_OnSelectHurtBox -= OnSelectTooth;
     }
 
     public void SetupHealth()
     {
-        m_currentHealth = m_startHealth;
-        m_toothHealthComponents = new List<ToothHealthComponent>(m_currentHealth);
-        for (int i = 0; i < m_currentHealth; ++i)
+        m_currentHealth = m_rows * m_columns;
+        m_toothHealthComponents = new List<List<ToothHealthComponent>>(m_rows);
+
+
+        for (int y = 0; y < m_rows; ++y)
         {
-            ToothHealthComponent newToothHc = Instantiate<ToothHealthComponent>(m_toothHealthComponent, transform);
-            m_toothHealthComponents.Add(newToothHc);
+            m_toothHealthComponents.Add(new List<ToothHealthComponent>(m_columns));
+            for (int x = 0; x < m_columns; ++x)
+            {
+                ToothHealthComponent newToothHc = Instantiate<ToothHealthComponent>(m_toothHealthComponent, m_toothPivot);
+                newToothHc.transform.position = m_toothPivot.position + new Vector3(x * m_spacing, -(y * m_spacing), 0);
+                m_toothHealthComponents[y].Add(newToothHc);
+            }
         }
     }
 
@@ -33,9 +49,39 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     {
         if (!(hc is ToothHealthComponent thc)) return;
 
-        if (!m_toothHealthComponents.Contains(thc)) return;
-        m_toothHealthComponents.Remove(thc);
-        Destroy(thc.gameObject);
+        if (!CheckTooth(thc)) return;
+        
         Hit(1);
     }
+
+    private bool CheckTooth(ToothHealthComponent thc)
+    {
+        foreach (List<ToothHealthComponent> list in m_toothHealthComponents)
+        {
+            if (list.Contains(thc)) return true;
+        }
+        return false;
+    }
+
+    void OnSelectTooth(ToothHurtBox thb)
+    {
+        CardComponent selectCard = DeckComponent.Instance.SelectedCard;
+        CardData card = selectCard.CardData;
+        int indexRow = m_toothHealthComponents.FindIndex(x => x.Contains(thb.THC));
+        int indexColumn = m_toothHealthComponents[indexRow].IndexOf(thb.THC);
+
+        foreach (Vector2 p in card.Positions)
+        {
+            int currentX = (int)(indexColumn + p.x);
+            int currentY = (int)(indexRow - p.y);
+
+            if (!(currentX >= 0 && currentX < m_columns && currentY >= 0 && currentY < m_rows)) continue;
+
+
+            m_toothHealthComponents[currentY][currentX].Hit(1);
+        }
+
+        DeckComponent.Instance.UseCard();
+    }
+
 }

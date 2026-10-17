@@ -6,11 +6,17 @@ public class ToothHealthComponent : LoadDataHealthComponent
 {
     [SerializeField] private bool m_hit;
 
+    [SerializeField] private int m_damagePerHit = 1;
+    public int m_DamagePerHit => m_damagePerHit;
+
     private void Update()
     {
-        if (m_hit)
+        ToothHit();
+    }
+    public void ToothHit() {
+    if (m_hit)
         {
-            Hit(1);
+            Hit(m_damagePerHit);
             m_hit = false;
         }
     }
