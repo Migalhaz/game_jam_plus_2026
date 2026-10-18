@@ -21,6 +21,10 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
 
     void Start()
     {
+        foreach(GameObject obj in m_allMaps)
+        {
+            obj.SetActive(false);
+        }
         m_traveling = false;
         if (m_regenMap || data.m_currentMapIdx == -1 || data.shouldReset)
         {
