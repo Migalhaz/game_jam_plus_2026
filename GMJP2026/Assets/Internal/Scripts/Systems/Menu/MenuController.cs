@@ -23,4 +23,9 @@ public class MenuController : MonoBehaviour
         m_mapData.m_currentMapIdx = -1;
         SceneController.Instance.LoadScene(2);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

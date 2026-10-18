@@ -10,6 +10,7 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
     [SerializeField] MapData data;
     [SerializeField] GameObject m_currentMap;
     [SerializeField] List<GameObject> m_allMaps;
+    public List<VisualMap> m_visualMaps = new List<VisualMap>();
 
     [SerializeField] Vector2 m_levelRange;
 
@@ -21,7 +22,7 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
 
     void Start()
     {
-        foreach(GameObject obj in m_allMaps)
+        foreach (GameObject obj in m_allMaps)
         {
             obj.SetActive(false);
         }
@@ -69,7 +70,13 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
             data.m_nodeLevels.Clear();
         }
         data.shouldReset = false;
+        data.visualIdx = Random.Range(0, m_visualMaps.Count);
+        
         Node[] mapNodes = m_currentMap.GetComponentsInChildren<Node>();
+
+
+        m_currentMap.GetComponent<MapVisual>().SetVisual(m_visualMaps[data.visualIdx]);
+        
 
         foreach (Node n in mapNodes)
         {
@@ -90,6 +97,8 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
     {
         m_currentMap = m_allMaps[data.m_currentMapIdx];
         m_currentMap.SetActive(true);
+
+        m_currentMap.GetComponent<MapVisual>().SetVisual(m_visualMaps[data.visualIdx]);
 
         Node[] mapNodes = m_currentMap.GetComponentsInChildren<Node>();
 
