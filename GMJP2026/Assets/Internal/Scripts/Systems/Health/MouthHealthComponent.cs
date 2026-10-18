@@ -14,7 +14,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     [SerializeField] Vector2 m_roundsToIncreaseMinMax;
     [SerializeField] MapData m_mapData;
     private List<List<ToothHealthComponent>> m_toothHealthComponents;
-
+    public int m_CurrentColumn => m_currentColumn;
     public int m_Rows => m_rows;
 
     private void OnEnable()
@@ -37,6 +37,12 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     {
         m_currentColumn = Mathf.RoundToInt(Mathf.Lerp(m_columns.x, m_columns.y, m_mapData.m_nodeLevels[m_mapData.currentNodeIdx]/12f));
         m_currentHealth = m_rows * m_currentColumn;
+       
+        if (m_mapData.shouldReset)
+        {
+            m_mapData.m_currentMapIdx = -1;
+        }
+
         m_toothHealthComponents = new List<List<ToothHealthComponent>>(m_rows);
 
         float xPivotOffset = ((m_currentColumn - 1) * m_spacing) / 2f;

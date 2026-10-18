@@ -21,6 +21,6 @@ public class MenuController : MonoBehaviour
     public void OnPlayButtonPress() {
         m_playerHealthData.UpdateStartHealth(m_startPlayerHealth);
         m_mapData.m_currentMapIdx = -1;
-        SceneController.Instance.LoadScene(3);
+        SceneController.Instance.LoadScene(2);
     }
 }

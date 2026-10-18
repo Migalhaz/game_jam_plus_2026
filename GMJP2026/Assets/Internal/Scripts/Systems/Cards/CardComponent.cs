@@ -6,6 +6,7 @@ public class CardComponent : MonoBehaviour
 {
     [SerializeField] UnityEngine.UI.Image m_backgroundRenderer;
     [SerializeField] UnityEngine.UI.Image m_blockRenderer;
+    [SerializeField] UnityEngine.UI.Image m_selectOverlayRenderer;
 
     [SerializeField] CardData m_cardData;
     [SerializeField] CardEffectData m_effectData;
@@ -13,6 +14,21 @@ public class CardComponent : MonoBehaviour
     public CardData CardData => m_cardData;
     public CardEffectData EffectData => m_effectData;
 
+    private void Update()
+    {
+        if (DeckComponent.Instance == null) return;
+        if (m_selectOverlayRenderer == null) return;
+
+        m_selectOverlayRenderer.gameObject.SetActive(Active());
+    }
+
+    bool Active()
+    {
+        if (DeckComponent.Instance == null) return false;
+        if (DeckComponent.Instance.SelectedCard == null) return false;
+        
+        return DeckComponent.Instance.SelectedCard == this;
+    }
 
     public void Select()
     {

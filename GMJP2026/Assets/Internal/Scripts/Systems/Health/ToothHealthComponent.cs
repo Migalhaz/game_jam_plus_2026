@@ -37,6 +37,15 @@ public class ToothHealthComponent : LoadDataHealthComponent
         ChangeAttackMode(false);
     }
 
+    private void Update()
+    {
+        if (DeckComponent.Instance == null) return;
+        if (DeckComponent.Instance.SelectedCard == null)
+        {
+            ChangeSelected(false);
+        }
+    }
+
     public void ChangeAttackMode(bool attackModeState)
     {
         m_attackMode = attackModeState;

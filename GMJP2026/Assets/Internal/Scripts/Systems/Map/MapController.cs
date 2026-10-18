@@ -22,7 +22,7 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
     void Start()
     {
         m_traveling = false;
-        if (m_regenMap || data.m_currentMapIdx == -1)
+        if (m_regenMap || data.m_currentMapIdx == -1 || data.shouldReset)
         {
             GenerateMap();
             return;

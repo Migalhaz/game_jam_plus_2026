@@ -44,6 +44,14 @@ public class DeckComponent : MigalhaSystem.Singleton.Singleton<DeckComponent>
         SetupDeck();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+        {
+            SelectCard(null);
+        }
+    }
+
     void SetupPool()
     {
         nextCardIndex = 0;
