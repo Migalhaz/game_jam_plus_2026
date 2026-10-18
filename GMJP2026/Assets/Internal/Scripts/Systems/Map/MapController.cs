@@ -22,7 +22,7 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
     void Start()
     {
         m_traveling = false;
-        if (m_regenMap || data.m_currentMap == null)
+        if (m_regenMap || data.m_currentMapIdx == -1)
         {
             GenerateMap();
             return;
@@ -53,8 +53,8 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
     {
         if (data == null) return;
 
-        data.m_currentMap = m_allMaps[Random.Range(0, m_allMaps.Count)];
-        m_currentMap = data.m_currentMap;
+        data.m_currentMapIdx = Random.Range(0, m_allMaps.Count);
+        m_currentMap = m_allMaps[data.m_currentMapIdx];
         m_currentMap.SetActive(true);
         if (data.m_nodeLevels == null)
         {
@@ -84,7 +84,7 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
 
     void LoadMap()
     {
-        m_currentMap = data.m_currentMap;
+        m_currentMap = m_allMaps[data.m_currentMapIdx];
         m_currentMap.SetActive(true);
 
         Node[] mapNodes = m_currentMap.GetComponentsInChildren<Node>();

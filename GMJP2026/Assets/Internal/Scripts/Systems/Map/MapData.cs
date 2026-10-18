@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/MapData")]
 public class MapData : ScriptableObject
 {
-    public GameObject m_currentMap;
+    public int m_currentMapIdx;
 
     public Dictionary<int, int> m_nodeLevels;
     public int currentNodeIdx;
