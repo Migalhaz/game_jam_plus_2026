@@ -37,6 +37,8 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
         m_currentHealth = m_rows * m_columns;
         m_toothHealthComponents = new List<List<ToothHealthComponent>>(m_rows);
 
+        float xPivotOffset = ((m_columns - 1) * m_spacing) / 2f;
+       
 
         for (int y = 0; y < m_rows; ++y)
         {
@@ -44,7 +46,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
             for (int x = 0; x < m_columns; ++x)
             {
                 ToothHealthComponent newToothHc = Instantiate<ToothHealthComponent>(m_toothHealthComponent, m_toothPivot);
-                newToothHc.transform.position = m_toothPivot.position + new Vector3(x * m_spacing, -(y * m_spacing), 0);
+                newToothHc.transform.position = m_toothPivot.position + new Vector3(x * m_spacing - xPivotOffset, -(y * m_spacing), 0);
                 m_toothHealthComponents[y].Add(newToothHc);
             }
         }
