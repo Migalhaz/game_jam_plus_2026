@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Internal/Assets/Scenes/Battle.unity
     guid: f3b8a73564d402446ad2e803b3eb6824
+  - enabled: 1
+    path: Assets/Internal/Assets/Scenes/PreBattle.unity
+    guid: 0eefd432197ec794f90f5379ede58c1b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

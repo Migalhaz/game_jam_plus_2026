@@ -8,6 +8,9 @@ public class DeckComponent : MigalhaSystem.Singleton.Singleton<DeckComponent>
     [SerializeField, Min(1)] private int m_maxCards = 1;
 
     private int m_currentCards;
+    public int MaxCards => m_maxCards;
+    public int CurrentCard => m_currentCards;
+
 
     [SerializeField] private CardComponent m_cardPrefab;
 

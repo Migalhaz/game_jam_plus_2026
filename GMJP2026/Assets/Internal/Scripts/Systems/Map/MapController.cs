@@ -48,7 +48,7 @@ public class MapController : MigalhaSystem.Singleton.Singleton<MapController>
                 currentNodeTarget = null;
                 m_traveling = false;
 
-                SceneController.Instance.LoadScene(3);
+                SceneController.Instance.LoadScene(4);
             }
         }
     }
