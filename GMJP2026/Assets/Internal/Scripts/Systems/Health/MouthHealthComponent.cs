@@ -10,6 +10,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
     [SerializeField, Min(0)] private float m_spacing;
     [SerializeField] Transform m_toothPivot;
     [SerializeField] Vector2 m_startRange;
+    [SerializeField] Vector2 m_roundsToIncreaseMinMax;
     private List<List<ToothHealthComponent>> m_toothHealthComponents;
 
     public int m_Rows => m_rows;
@@ -60,7 +61,9 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 
     private void OnStartTurn(int ct)
     {
-        int teethCount = Random.Range((int)(m_startRange.x + (ct - 1d)), (int)(m_startRange.y + ct));
+        int min = Mathf.FloorToInt(m_startRange.x + (ct - 1) / m_roundsToIncreaseMinMax.x);
+        int max = Mathf.FloorToInt(m_startRange.y + (ct - 1) / m_roundsToIncreaseMinMax.y);
+        int teethCount = Random.Range(min, max);
         teethCount = Mathf.Min(m_currentHealth, teethCount);
 
         List<Vector2> validIdx = new List<Vector2>(CurrentHealth);

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10ed77ac83f18234d82c9a253ce07ed5, type: 3}
-  m_Name: DA_AttackEffectData
+  m_Name: DA_PhysicAttackEffectDataf
   m_EditorClassIdentifier: 
   m_cardBackground: {fileID: -3247254919715690751, guid: 2233dfac62eb14c46b1ee37577f35a5e, type: 3}

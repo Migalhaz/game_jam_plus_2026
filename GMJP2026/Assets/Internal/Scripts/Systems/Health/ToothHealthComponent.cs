@@ -2,8 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ToothDamageFrom
+{ 
+    PhysxEffect = 0,
+    MagixEffect = 1,
+}
+
 public class ToothHealthComponent : LoadDataHealthComponent
 {
+    public ToothDamageFrom m_DamageFrom { get; private set; }
     private bool m_selected;
     private bool m_attackMode;
     public bool Selected => m_selected;
@@ -49,5 +56,6 @@ public class ToothHealthComponent : LoadDataHealthComponent
     {
         base.Awake();
         ChangeAttackMode(false);
+        m_DamageFrom = (ToothDamageFrom)Random.Range(0, 2);
     }
 }

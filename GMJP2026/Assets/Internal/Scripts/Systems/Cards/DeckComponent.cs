@@ -15,6 +15,8 @@ public class DeckComponent : MigalhaSystem.Singleton.Singleton<DeckComponent>
     [SerializeField] List<CardEffectData> m_allEffectDatas;
 
     [SerializeField] UnityEngine.UI.HorizontalLayoutGroup m_hlg;
+    [SerializeField] UnityEngine.UI.Image m_nextCardBackground;
+    [SerializeField] UnityEngine.UI.Image m_nextCardBlock;
 
     private int nextCardIndex;
 
@@ -129,5 +131,10 @@ public class DeckComponent : MigalhaSystem.Singleton.Singleton<DeckComponent>
 
         ++nextCardIndex;
         ++m_currentCards;
+
+        data = m_cardPool[nextCardIndex % m_cardPool.Count];
+        effectData = m_effectPool[nextCardIndex % m_effectPool.Count];
+        m_nextCardBackground.sprite = effectData.CardBackground;
+        m_nextCardBlock.sprite = data.BlockSprite;
     }
 }
