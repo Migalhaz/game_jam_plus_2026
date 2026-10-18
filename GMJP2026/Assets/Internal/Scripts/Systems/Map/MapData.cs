@@ -10,4 +10,6 @@ public class MapData : ScriptableObject
     public Dictionary<int, int> m_nodeLevels;
     public int currentNodeIdx;
     public bool shouldReset;
+
+
 }

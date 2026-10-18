@@ -7,12 +7,14 @@ public class PlayerHealthComponent : LoadDataHealthComponent
     private void OnEnable()
     {
         HealthComponentObserver.m_OnDie += OnToothDies;
+        HealthComponentObserver.m_OnDie += OnMouthDies;
         PlayerHealthComponentObserver.m_OnRequestPlayerDamage += TryHitPlayer;
     }
 
     private void OnDisable()
     {
         HealthComponentObserver.m_OnDie -= OnToothDies;
+        HealthComponentObserver.m_OnDie -= OnMouthDies;
         PlayerHealthComponentObserver.m_OnRequestPlayerDamage -= TryHitPlayer;
     }
 
@@ -25,9 +27,18 @@ public class PlayerHealthComponent : LoadDataHealthComponent
 
     private void OnToothDies(HealthComponent hc)
     {
-        if (!(hc is ToothHealthComponent thc)) return;
+        if (!(hc is ToothHealthComponent)) return;
 
         Heal(1);
+    }
+
+    void OnMouthDies(HealthComponent hc)
+    {
+        if (!(hc is MouthHealthComponent)) return;
+        if (m_healthData is PlayerHealthData pd)
+        {
+            pd.UpdateStartHealth(m_currentHealth);
+        }
     }
 
     protected override void Die()

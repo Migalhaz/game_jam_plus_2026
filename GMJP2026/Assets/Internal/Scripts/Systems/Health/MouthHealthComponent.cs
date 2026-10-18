@@ -6,15 +6,16 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 {
     [SerializeField] private ToothHealthComponent m_toothHealthComponent;
     [SerializeField] private int m_rows = 5;
-    [SerializeField] private int m_columns = 5;
+    [SerializeField] private Vector2Int m_columns = new Vector2Int(4, 10);
+    int m_currentColumn;
     [SerializeField, Min(0)] private float m_spacing;
     [SerializeField] Transform m_toothPivot;
     [SerializeField] Vector2 m_startRange;
     [SerializeField] Vector2 m_roundsToIncreaseMinMax;
+    [SerializeField] MapData m_mapData;
     private List<List<ToothHealthComponent>> m_toothHealthComponents;
 
     public int m_Rows => m_rows;
-    public int m_Columns => m_columns;
 
     private void OnEnable()
     {
@@ -34,16 +35,17 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 
     public void SetupHealth()
     {
-        m_currentHealth = m_rows * m_columns;
+        m_currentColumn = Mathf.RoundToInt(Mathf.Lerp(m_columns.x, m_columns.y, m_mapData.m_nodeLevels[m_mapData.currentNodeIdx]/12f));
+        m_currentHealth = m_rows * m_currentColumn;
         m_toothHealthComponents = new List<List<ToothHealthComponent>>(m_rows);
 
-        float xPivotOffset = ((m_columns - 1) * m_spacing) / 2f;
+        float xPivotOffset = ((m_currentColumn - 1) * m_spacing) / 2f;
        
 
         for (int y = 0; y < m_rows; ++y)
         {
-            m_toothHealthComponents.Add(new List<ToothHealthComponent>(m_columns));
-            for (int x = 0; x < m_columns; ++x)
+            m_toothHealthComponents.Add(new List<ToothHealthComponent>(m_currentColumn));
+            for (int x = 0; x < m_currentColumn; ++x)
             {
                 ToothHealthComponent newToothHc = Instantiate<ToothHealthComponent>(m_toothHealthComponent, m_toothPivot);
                 newToothHc.transform.position = m_toothPivot.position + new Vector3(x * m_spacing - xPivotOffset, -(y * m_spacing), 0);
@@ -72,7 +74,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 
         for (int y = 0; y < m_rows; ++y)
         {
-            for (int x = 0; x < m_columns; ++x)
+            for (int x = 0; x < m_currentColumn; ++x)
             {
                 if (m_toothHealthComponents[y][x].IsAlive)
                 {
@@ -119,7 +121,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
 
         for (int y = 0; y < m_rows; ++y)
         {
-            for (int x = 0; x < m_columns; ++x)
+            for (int x = 0; x < m_currentColumn; ++x)
             {
                 if (!m_toothHealthComponents[y][x].IsAlive) continue;
                 
@@ -145,7 +147,7 @@ public class MouthHealthComponent : HealthComponent, ISetupHealthComponent
             int currentX = (int)(indexColumn + p.x);
             int currentY = (int)(indexRow - p.y);
 
-            if (!(currentX >= 0 && currentX < m_columns && currentY >= 0 && currentY < m_rows)) continue;
+            if (!(currentX >= 0 && currentX < m_currentColumn && currentY >= 0 && currentY < m_rows)) continue;
 
             effect.ApplyEffect(m_toothHealthComponents[currentY][currentX]);
             //m_toothHealthComponents[currentY][currentX].Hit(1);

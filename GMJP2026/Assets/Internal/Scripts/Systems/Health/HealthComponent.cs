@@ -65,7 +65,7 @@ public class StartHealthComponent : HealthComponent, ISetupHealthComponent
 
 public abstract class LoadDataHealthComponent : HealthComponent, ISetupHealthComponent
 {
-    [SerializeField] private HealthData m_healthData;
+    [SerializeField] protected HealthData m_healthData;
     public void SetupHealth()
     {
         m_currentHealth = m_healthData.m_StartHealth;
