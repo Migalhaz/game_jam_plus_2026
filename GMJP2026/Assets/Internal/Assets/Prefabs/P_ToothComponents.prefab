@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_thc: {fileID: 4847462626029266648}
   m_spriteRenderer: {fileID: 7150252409582763329}
+  m_normalToothSprite: {fileID: 7520586346814383451, guid: e20eb14cb5e24254cb2ab2ed2550e288, type: 3}
+  m_especialToothSprite: {fileID: 9172660301400970860, guid: 8bdc5450501b9274db9b0e9b14581476, type: 3}
 --- !u!1 &3624245577665136580
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,8 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_healthData: {fileID: 11400000, guid: 121cf566291c14a4dbb7aee7f070e414, type: 2}
-  m_hit: 0
-  m_damagePerHit: 1
 --- !u!114 &6166843039413452806
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ public class ToothVisual : MonoBehaviour
 {
     [SerializeField] ToothHealthComponent m_thc;
     [SerializeField] SpriteRenderer m_spriteRenderer;
+    [SerializeField] Sprite m_normalToothSprite;
+    [SerializeField] Sprite m_especialToothSprite;
 
     private void OnEnable()
     {
@@ -20,6 +22,16 @@ public class ToothVisual : MonoBehaviour
 
     private void Update()
     {
+        if(m_thc.m_DamageFrom == ToothDamageFrom.PhysxEffect)
+        {
+            m_spriteRenderer.sprite = m_normalToothSprite;
+        }
+        else
+        {
+            m_spriteRenderer.sprite = m_especialToothSprite;
+        }
+
+
         if (!m_thc.IsAlive) return;
 
         if (m_thc.Selected)
